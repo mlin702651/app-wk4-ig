@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { navigationRef, navigate } from './RootNavigation';
 import * as RootNavigation from './RootNavigation';
 import AlbumScreen from './src/screens/AlbumScreen';
-import DetailScreen from './src/screens/DetailScreen';
+import DirectScreen from './src/screens/DirectScreen';
 import albumData from "./src/json/albums.json";
 
 const Stack = createStackNavigator();
@@ -37,8 +37,8 @@ const App = () => {
 
         <Stack.Screen
           name="Detail"
-          component={DetailScreen}
-          options={({ route }) => ({
+          component={DirectScreen}
+          options={{
             title: albumData.detailTital,
             headerStyle: {
               backgroundColor: '#fff',
@@ -48,7 +48,7 @@ const App = () => {
               fontWeight: '400',
               fontSize: 20
             },
-          })}
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
